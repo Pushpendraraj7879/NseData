@@ -1,5 +1,5 @@
 const express=require("express")
-import { nseData } from 'nse-data';
+const { nseData } =require('nse-data');
 const app=express()
 const PORT=process.env.PORT || 3000
 const data=[]
