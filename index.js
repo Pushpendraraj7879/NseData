@@ -20,7 +20,13 @@ const PORT = process.env.PORT || 3000;
 app.get('/nseData',(req,res)=>{
     const fetchData=async()=>{
         try{
-            const response=await fetch("https://www.nseindia.com/api/marketStatus")
+            const response=await fetch("https://www.nseindia.com/api/marketStatus", {
+                headers: {
+                  "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3",
+                  "Accept": "application/json",
+                  "Referer": "https://www.nseindia.com",
+                },
+              })
             if(!response){
                 throw new Error("fetching failed")
             }
