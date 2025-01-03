@@ -25,10 +25,10 @@ app.get('/nseData',(req,res)=>{
                 throw new Error("fetching failed")
             }
             const result=await response.json()
-            console.log("data",result)
+            // console.log("data",result)
             res.status(200).json(result)
         }catch(error){
-        console.log("error",error.message)
+        // console.log("error",error.message)
         res.status(500).json(error)
         }
     }
